@@ -1,0 +1,28 @@
+<h2>Listing campanas</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for campana <- @campanas do %>
+    <tr>
+      <td><%= campana.nombre %></td>
+      <td><%= campana.fecha %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: campana_path(@conn, :show, campana), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: campana_path(@conn, :edit, campana), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: campana_path(@conn, :delete, campana), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New campana", to: campana_path(@conn, :new) %>

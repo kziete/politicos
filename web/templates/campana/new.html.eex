@@ -1,0 +1,6 @@
+<h2>New campana</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: campana_path(@conn, :create) %>
+
+<%= link "Back", to: campana_path(@conn, :index) %>

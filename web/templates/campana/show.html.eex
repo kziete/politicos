@@ -1,0 +1,18 @@
+<h2>Show campana</h2>
+
+<ul>
+
+  <li>
+    <strong>Nombre:</strong>
+    <%= @campana.nombre %>
+  </li>
+
+  <li>
+    <strong>Fecha:</strong>
+    <%= @campana.fecha %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: campana_path(@conn, :edit, @campana) %>
+<%= link "Back", to: campana_path(@conn, :index) %>
